@@ -42,7 +42,7 @@ const Navbar = () => {
             {naviteams}
           </ul>
         </div>
-        <Link to="/" className="btn btn-ghost normal-case text-xl">
+        <Link to="/" className=" text-xl">
           <img src={logo} alt="" />
         </Link>
       </div>
@@ -57,13 +57,13 @@ const Navbar = () => {
 <div className="tex-2xl">
 
 
-<button className="text-[#FF3811] " onClick={toggleTheme}>
+{/* <button className="text-[#FF3811] " onClick={toggleTheme}>
 {isDarkTheme ? <MdDarkMode size={themeIconSize} /> : <BsSunFill size={themeIconSize} />}
-        </button>
+        </button> */}
         </div>
 
        <div>
-       <button className="  text-[#FF3811] btn ">Appointment</button>
+       <button className="  text-[#FF3811] btn ">World Hotel</button>
        </div>
       </div>
    
