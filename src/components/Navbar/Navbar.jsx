@@ -2,8 +2,25 @@ import { Link } from "react-router-dom";
 import { MdDarkMode } from "react-icons/md";
 import { BsSunFill } from "react-icons/bs";
 import logo from '../../assets/images/icon/logo.png'
+import { useState } from "react";
 const Navbar = () => {
 
+
+    // -----------------dark mode---------------
+const [isDarkMode,setDarkMode]=useState(false);
+const toogleTheame=()=>{
+    const htmlElement =document.documentElement;
+    const currentTheme=htmlElement.getAttribute("data-theme");
+    setDarkMode((prevDarMode) =>!prevDarMode);
+    if (currentTheme==="synthwave") {
+        htmlElement.setAttribute("data-theme","lofi");
+  
+    } else{
+htmlElement.setAttribute("data-theme","synthwave")
+    }
+}
+
+const themeIconSize = "30px";
  const naviteams=(
     <>
     <li>
@@ -16,7 +33,7 @@ const Navbar = () => {
  </>
  )
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-neutral text-neutral-content">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -54,16 +71,16 @@ const Navbar = () => {
       <div className="navbar-end">
        
    {/* dark theme */}
-<div className="tex-2xl">
+<div className="tex-2xl mr-8">
 
 
-{/* <button className="text-[#FF3811] " onClick={toggleTheme}>
-{isDarkTheme ? <MdDarkMode size={themeIconSize} /> : <BsSunFill size={themeIconSize} />}
-        </button> */}
+<button className="text-[#FF3811] " onClick={toogleTheame}>
+{isDarkMode ? <MdDarkMode size={themeIconSize} /> : <BsSunFill size={themeIconSize} />}
+        </button>
         </div>
 
        <div>
-       <button className="  text-[#FF3811] btn ">World Hotel</button>
+       <button className="   btn ">World Hotel</button>
        </div>
       </div>
    
