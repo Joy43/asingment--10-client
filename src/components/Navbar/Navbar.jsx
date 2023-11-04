@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-
-
+import { MdDarkMode } from "react-icons/md";
+import { BsSunFill } from "react-icons/bs";
+import logo from '../../assets/images/icon/logo.png'
 const Navbar = () => {
 
  const naviteams=(
@@ -51,9 +52,7 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <div className="w-10 rounded-full">
-          <img src={user?.metadata?.photoURL} />
-        </div>
+       
    {/* dark theme */}
 <div className="tex-2xl">
 
