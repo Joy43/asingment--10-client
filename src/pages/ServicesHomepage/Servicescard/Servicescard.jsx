@@ -1,8 +1,13 @@
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import { motion, useTransform } from "framer-motion";
+import { useEffect } from 'react';
 const Servicescard = ({Services}) => {
     const {_id,Name,DesCription,Price,imghotel,Description,Availability,offers,roomsize}=Services;
-  
+    // --------aos--------
+    useEffect(() => {
+        AOS.init({ duration: 1000 }); // You can adjust the duration as needed
+      }, []);
     return (
         <div style={{perspective:2000}}>
           
@@ -21,7 +26,7 @@ const Servicescard = ({Services}) => {
         y: 0,
       }}
     >
-            <div className="card w-96 bg-base-300 shadow-2xl">
+            <div data-aos="fade-up-right" className="card w-96 bg-base-300 shadow-2xl">
             <figure className="px-10 pt-10">
             <div className="relative mx-4 mt-4 h-80 overflow-hidden rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
     <img src={imghotel} alt="profile-picture"  />

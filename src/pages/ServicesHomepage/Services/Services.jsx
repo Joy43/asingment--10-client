@@ -20,7 +20,7 @@ const Services = () => {
             {/*-------- services ----------*/}
 
       
-          <div  data-aos="fade-up" className="grid grid-cols-1 md:grid-cols-3 gap-6 top-5 bottom-3" >
+          <div   className="grid grid-cols-1 md:grid-cols-3 gap-6 top-5 bottom-3" >
             {
                 Serviceshome.map(Services=><Servicescard 
                 key={Services._id}
