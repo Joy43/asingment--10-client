@@ -5,7 +5,7 @@ const Servicescard = ({Services}) => {
   
     return (
         <div style={{perspective:2000}}>
-          }
+          
 
 <motion.div
       whileHover={{ scale: 1.1 }}
