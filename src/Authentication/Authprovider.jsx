@@ -58,7 +58,11 @@ useEffect(()=>{
 //------------------ data send child---------------------
 
 const authInfo={
-    user,createUser,signIn,logOut,  signInWithGoogle,
+    user,
+    createUser,
+    signIn,
+    logOut,
+    signInWithGoogle,
 }
     return (
        <AuthContext.Provider value={authInfo}>

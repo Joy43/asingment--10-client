@@ -92,7 +92,8 @@ const Slide = () => {
     <span className="relative text-black group-hover:text-white">Book Now</span>
   </button>
                    </Link>
-                      
+                     
+                     
                   </div>
               </div>
           </div>

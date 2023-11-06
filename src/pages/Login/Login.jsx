@@ -3,11 +3,14 @@ import Swal from 'sweetalert2'
 import { BsEyeSlashFill, BsEyeFill } from "react-icons/bs";
 // import { Player, Controls } from '@lottiefiles/react-lottie-player';
 import video from '../../assets/video/login.mp4'
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import  { useEffect, useRef, useState } from 'react';
+import useAuthentication from '../../Hooks/useAuthentication';
 
 const signIn = () => {
-   
+   const {signIn}=useAuthentication()
+   const location = useLocation();
+   const navigate = useNavigate();
     const [showPassword, setShowPassword] = useState(false);
     const videoRef = useRef(null);
     useEffect(() => {
@@ -44,7 +47,7 @@ const signIn = () => {
         } 
         // ------------NAVIGATE-----------------
         
-        // navigate(location?.state?location.state:'/');
+        navigate(location?.state?location.state:'/');
       })
       
       .catch(error => {

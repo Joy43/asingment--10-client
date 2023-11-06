@@ -3,11 +3,22 @@ import { MdDarkMode } from "react-icons/md";
 import { BsSunFill } from "react-icons/bs";
 import logo from '../../assets/images/icon/logo.png'
 import { useState } from "react";
+import useAuthentication from "../../Hooks/useAuthentication";
+import GoogleAuth from "../../Authentication/GoogleAuth";
 const Navbar = () => {
 
 
     // -----------------dark mode---------------
 const [isDarkMode,setDarkMode]=useState(false);
+
+// ------------google login---------
+const {user,logOut}= useAuthentication()
+const handleLogout=()=>{
+  logOut()
+  .then()
+  .catch()
+}
+
 const toogleTheame=()=>{
     const htmlElement =document.documentElement;
     const currentTheme=htmlElement.getAttribute("data-theme");
@@ -30,16 +41,16 @@ const themeIconSize = "30px";
      <li>
          <Link to="/contat">Contact</Link>
      </li>
+     
      <li>
-         <Link to="/signup">Signup</Link>
-     </li>
-     <li>
-         <Link to="/login">SignIn</Link>
+         <Link to="/login">Login</Link>
      </li>
      <li>
          <Link to="/rooms">Books Now</Link>
      </li>
- </>
+     {/* GOOGLE */}
+    </>
+    
  )
     return (
       <div className="mt-3">
@@ -88,10 +99,21 @@ const themeIconSize = "30px";
 {isDarkMode ? <MdDarkMode size={themeIconSize} /> : <BsSunFill size={themeIconSize} />}
         </button>
         </div>
+        {/* google */}
+<div>
+<div>
+ 
+</div>
 
-       <div>
-       <button className="   btn ">World Hotel</button>
-       </div>
+{
+
+user?
+<button  onClick={handleLogout} className="btn"> Sign out </button>
+:
+<GoogleAuth></GoogleAuth>
+}
+</div>
+      
       </div>
    
       
