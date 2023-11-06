@@ -1,7 +1,7 @@
 import Faq from "../../components/Faq/Faq";
-import Faqcard from "../../components/Faq/Faqcard";
+
 import Slide from "../../components/Slide/Slide";
-import Videodata from "../../components/Videoslide/Videodata";
+
 import Services from "../ServicesHomepage/Services/Services";
 
 
@@ -17,9 +17,7 @@ const Home = () => {
             <div>
                 <Faq></Faq>
             </div>
-            <div>
-                <Videodata></Videodata>
-            </div>
+           
         </div>
     );
 };

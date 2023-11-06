@@ -1,17 +1,14 @@
 import { useEffect } from "react";
 import useServices from "../../../Hooks/useServices";
 import Servicescard from "../Servicescard/Servicescard";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+
 
 
 const Services = () => {
     //------------ load data------------
     const Serviceshome= useServices()
-    // ---------aos scroall----------
-    useEffect(() => {
-        AOS.init({ duration: 1000 }); // You can adjust the duration as needed
-      }, []);
+
+    
       
     return (
 
@@ -31,6 +28,8 @@ const Services = () => {
             }
             </div>
          
+{/* pagination */}
+
         </div>
 
     );
