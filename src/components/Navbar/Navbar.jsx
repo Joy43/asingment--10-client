@@ -30,6 +30,12 @@ const themeIconSize = "30px";
      <li>
          <Link to="/contat">Contact</Link>
      </li>
+     <li>
+         <Link to="/signup">Signup</Link>
+     </li>
+     <li>
+         <Link to="/login">SignIn</Link>
+     </li>
  </>
  )
     return (
