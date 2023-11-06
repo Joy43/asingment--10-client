@@ -1,7 +1,8 @@
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { motion, useTransform } from "framer-motion";
+import { motion} from "framer-motion";
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 const Servicescard = ({Services}) => {
     const {_id,Name,DesCription,Price,imghotel,Description,Availability,offers,roomsize}=Services;
     // --------aos--------
@@ -36,7 +37,12 @@ const Servicescard = ({Services}) => {
                 <h2 className="card-title">{Name}</h2>
                 <p className="text-xl text-orange-500">Price: ${Price}</p>
                 <div className="card-actions">
-                   
+                <Link to="/rooms">
+                   <button className="group relative h-12 w-48 overflow-hidden rounded-lg bg-white text-lg shadow">
+    <div className="absolute inset-0 w-3 bg-blue-400 transition-all duration-[250ms] ease-out group-hover:w-full"></div>
+    <span className="relative text-black group-hover:text-white">Book Now</span>
+  </button>
+                   </Link>
                     </div>
             </div>
         </div>  
