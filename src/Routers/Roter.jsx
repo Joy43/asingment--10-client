@@ -5,12 +5,13 @@ import Services from "../pages/ServicesHomepage/Services/Services";
 import ErrorPage from "../ErrorRouter/ErrorRouter";
 import Signup from "../pages/Signup/Signup";
 import Login from "../pages/Login/Login";
+import Rooms from "../pages/Rooms/Rooms";
 
 
 const router = createBrowserRouter([
     {
       path: "/",
-     element:<Mainlayout></Mainlayout>,
+      element:<Mainlayout></Mainlayout>,
      errorElement:<ErrorPage></ErrorPage>,
     children: [
         {
@@ -32,7 +33,8 @@ path:'login',
 element:<Login></Login>
         },
         {
-          
+          path:'rooms',
+          element:<Rooms></Rooms>
         }
      ]
     }

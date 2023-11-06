@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 
 const Slide = () => {
@@ -12,7 +13,12 @@ const Slide = () => {
                   <p>Beautiful 2Bedroom apartment in Singapore! is set in the Orchard district of Singapore, 500 metres from Lucky Plaza,
                      1.1 km from 313@Somerset and 1.2 km from Orchard Gateway.</p>
                   <div>
-                      <button className="btn outline-dotted btn-secondary mr-5">Book Now</button>
+                   <Link to="/rooms">
+                   <button className="group relative h-12 w-48 overflow-hidden rounded-lg bg-white text-lg shadow">
+    <div className="absolute inset-0 w-3 bg-blue-400 transition-all duration-[250ms] ease-out group-hover:w-full"></div>
+    <span className="relative text-black group-hover:text-white">Book Now</span>
+  </button>
+                   </Link>
                    
                   </div>
               </div>
@@ -31,7 +37,12 @@ const Slide = () => {
                   <p>Boasting a year-round outdoor pool, VicHaus Serviced Apartment in Singapore offers accommodation with free WiFi
                      and free private parking for guests who drive.</p>
                   <div>
-                  <button className="btn outline-dotted btn-secondary mr-5">Book Now</button>
+                  <Link to="/rooms">
+                   <button className="group relative h-12 w-48 overflow-hidden rounded-lg bg-white text-lg shadow">
+    <div className="absolute inset-0 w-3 bg-blue-400 transition-all duration-[250ms] ease-out group-hover:w-full"></div>
+    <span className="relative text-black group-hover:text-white">Book Now</span>
+  </button>
+                   </Link>
                     
                   </div>
               </div>
@@ -51,7 +62,12 @@ const Slide = () => {
                   <p>Situated in Kuala Lumpur, 500 metres from Starhill Gallery and 500 metres from Pavilion Kuala Lumpur, COZY 2BR Fairlane Residences Next To Lot 10 offers a
                      fitness centre and air conditioning</p>
                   <div>
-                  <button className="btn outline-dotted btn-secondary mr-5">Book Now</button>
+                  <Link to="/rooms">
+                   <button className="group relative h-12 w-48 overflow-hidden rounded-lg bg-white text-lg shadow">
+    <div className="absolute inset-0 w-3 bg-blue-400 transition-all duration-[250ms] ease-out group-hover:w-full"></div>
+    <span className="relative text-black group-hover:text-white">Book Now</span>
+  </button>
+                   </Link>
                       {/* <button className="btn btn-outline btn-secondary">Latest Project</button> */}
                   </div>
               </div>
@@ -70,7 +86,12 @@ const Slide = () => {
                   <p>Castle Bay Touch Cox's Bazar is offering accommodation in Cox's Bazar. Featuring a restaurant, the 3-star hotel has air-conditioned rooms 
                     with free WiFi, each with a private bathroom.</p>
                   <div>
-                  <button className="btn outline-dotted btn-secondary mr-5">Book Now</button>
+                  <Link to="/rooms">
+                   <button className="group relative h-12 w-48 overflow-hidden rounded-lg bg-white text-lg shadow">
+    <div className="absolute inset-0 w-3 bg-blue-400 transition-all duration-[250ms] ease-out group-hover:w-full"></div>
+    <span className="relative text-black group-hover:text-white">Book Now</span>
+  </button>
+                   </Link>
                       
                   </div>
               </div>

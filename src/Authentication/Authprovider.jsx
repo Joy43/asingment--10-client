@@ -1,60 +1,68 @@
-import { createContext, useState } from "react";
-import app from "../Firebase/Firebase.config";
+import { useState,useEffect, createContext } from "react";
 
 import {  createUserWithEmailAndPassword, signInWithEmailAndPassword,GoogleAuthProvider, signInWithPopup , signOut ,getAuth, onAuthStateChanged} from "firebase/auth";
-// ---------***context***----------
+import app from "../Firebase/Firebase.config";
+
+// context
 export const AuthContext=createContext(null);
-const auth= getAuth(app)
+const auth=getAuth(app)
 
 const Authprovider = ({children}) => {
-    const [user,setUser]=useState(null)
-    const [loading,setLoading]=useState(true);
-
-
-    // ********* create user  ***********
+const[user,setUser]=useState(null);
+const [load,setLoading]=useState(true);
+// create user--------------
 const createUser=(email,password)=>{
-    setLoading(true);
-    return createUserWithEmailAndPassword(auth,email,password);
+return createUserWithEmailAndPassword(auth,email,password);
 }
 
-// ********* Login ***********
+
+//----------------------- sign in (login)----------------------------------
 const signIn=(email,password)=>{
-    setLoading(true);
-     return signInWithEmailAndPassword(auth,email,password);
-  }
+  setLoading(true);
+   return signInWithEmailAndPassword(auth,email,password);
+}
 
-//   ********* logout ***********
+//------------------- signOut------------------
 const logOut=()=>{
-    setLoading(true) 
-      return signOut(auth);
-  }
-// ************ google signin**********
-const signInWithGoogle = async () => {
-    setLoading(true)
-      const provider = new GoogleAuthProvider();
-  
-      try {
-        const result = await signInWithPopup(auth, provider);
-        const user = result.user;
-        setUser(user); 
-      } catch (error) {
-        console.error("Error signing in with Google:", error);
-      }
-    };
+  setLoading(true) 
+    return signOut(auth);
+}
 
-    //-------   *** Data send child *** ---------
-    const authInfo={
-        user,
-        createUser,
-        signIn,
-        logOut,
-        loading,
-        signInWithGoogle,
+// -------------------sing in google-----------------
+
+
+const signInWithGoogle = async () => {
+  setLoading(true)
+    const provider = new GoogleAuthProvider();
+
+    try {
+      const result = await signInWithPopup(auth, provider);
+      const user = result.user;
+      setUser(user); 
+    } catch (error) {
+      console.error("Error signing in with Google:", error);
     }
+  };
+
+  //------------- user manage -----------------------
+useEffect(()=>{
+  const unSubcribe=onAuthStateChanged(auth,currentUser=>{
+    console.log('user in the auth changed'.currentUser);
+    setUser(currentUser)
+    setLoading(false)
+  })
+  return()=>unSubcribe();
+},[])
+
+
+//------------------ data send child---------------------
+
+const authInfo={
+    user,createUser,signIn,logOut,  signInWithGoogle,
+}
     return (
-        <AuthContext.Provider value={authInfo}>
+       <AuthContext.Provider value={authInfo}>
         {children}
-        children: PropTypes.node.isRequired,
        </AuthContext.Provider>
     );
 };

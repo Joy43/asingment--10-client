@@ -36,6 +36,9 @@ const themeIconSize = "30px";
      <li>
          <Link to="/login">SignIn</Link>
      </li>
+     <li>
+         <Link to="/rooms">Books Now</Link>
+     </li>
  </>
  )
     return (

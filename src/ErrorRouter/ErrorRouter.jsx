@@ -1,5 +1,18 @@
 import { Link } from "react-router-dom";
+import  { useEffect, useRef } from 'react';
+import video from "../assets/video/404.mp4"
 const ErrorPage = () => {
+
+  const videoRef = useRef(null);
+  // --------------------
+    useEffect(() => {
+        
+        videoRef.current.play();
+    videoRef.current.addEventListener('ended', () => {
+          videoRef.current.play();
+        });
+      }, []);
+      // -------------------
     return (
         <div className="h-screen justify-center items-center">
             
@@ -11,10 +24,7 @@ const ErrorPage = () => {
             <span className="sr-only">Info</span>
             <h3 className="text-lg font-medium">Page not found</h3>
           </div>
-          <div className="mt-2 mb-4 text-sm">
-           <img src="https://i.ibb.co/GCKXnMY/Purple-And-Pink-Illustration-Error-404-Instagram-Post.png" alt="" />
-          </div>
-          <div className="flex">
+          <div className="flex justify-center">
           <Link to="/">
           <button type="button" className="text-white bg-blue-800 hover:bg-blue-900 focus:ring-4 focus:outline-none focus:ring-blue-200 font-medium rounded-lg text-xs px-3 py-1.5 mr-2 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
               <svg className="-ml-0.5 mr-2 h-3 w-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 14">
@@ -30,6 +40,24 @@ const ErrorPage = () => {
             </button>
            </Link>
           </div>
+          <div className="mt-2 mb-4 text-sm">
+          <video
+        ref={videoRef}
+        autoPlay
+        muted 
+        width="1260"
+        height="460"
+      >
+        <source
+          src={video}
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
+
+           {/* <img className="w-full h-fit" src="https://i.ibb.co/GCKXnMY/Purple-And-Pink-Illustration-Error-404-Instagram-Post.png" alt="" /> */}
+          </div>
+          
         </div>
         
         

@@ -1,11 +1,14 @@
-import useAuthentication from "../../Hooks/useAuthentication";
+
 import Swal from 'sweetalert2'
-import { BsEyeSlashFill, BsEyeFill } from "react-icons/bs";
+import { BsEyeSlashFill, BsEyeFill } from "react-icons/bs"
 import { Player, Controls } from '@lottiefiles/react-lottie-player';
+
 import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../Authentication/Authprovider";
 const Signup = () => {
 
-    const{createUser}=useAuthentication()
+    const {createUser}=useContext(AuthContext);
     const [showPassword, setShowPassword] = useState(false);
 
     const handleRegister = (e) => {
@@ -52,7 +55,7 @@ const Signup = () => {
             if(result.user){
               Swal.fire(
                 'Register  successfull',
-                'Welcome to my Hotel member ',
+                'Welcome to my Hotel membership ',
                 'success'
               );
             }
@@ -66,14 +69,14 @@ const Signup = () => {
       <div className="hero-content flex-col lg:flex-row-reverse">
         <div className="text-center lg:text-left">
             {/*  lottie animatim add */}
-        <Player
+         <Player
   autoplay
   loop
-  src="https://lottie.host/d6e8f388-0dda-4341-bb1a-646d8ad2feba/oz2mSixqv2.json"
+  src="https://lottie.host/9bc9c81e-9fad-4452-86d4-6bbe388678cb/ech29NQ22U.json"
   style={{ height: '450px', width: '350px' }}
 >
   <Controls visible={false} buttons={['play', 'repeat', 'frame', 'debug']} />
-</Player>
+</Player> 
         </div>
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
           <div className="card-body">
