@@ -21,7 +21,7 @@ const Signup = () => {
         if (password.length < 6) {
           Swal.fire({
             icon: "error",
-            title: "Invalid Password",
+            title: "make strong password",
             text: "Please use a minimum of 6 characters for the password",
           });
           return;
@@ -31,14 +31,14 @@ const Signup = () => {
           // Display SweetAlert for password without a special character
           Swal.fire({
             icon: "error",
-            title: "Invalid Password",
+            title: " Week Password",
             text: "Please include special character in the password.",
           });
           return; // Stop further execution
         } else if (!/[A-Z]/.test(password)) {
           Swal.fire({
             icon: "error",
-            title: "Invalid Password",
+            title: " Improve strong Password",
             text: "You can must use Capital letter ",
           });
           return;
@@ -52,7 +52,7 @@ const Signup = () => {
             if(result.user){
               Swal.fire(
                 'Register  successfull',
-                'Welcome to my Website',
+                'Welcome to my Hotel member ',
                 'success'
               );
             }
@@ -65,6 +65,7 @@ const Signup = () => {
         <div className="hero min-h-screen bg-base-200">
       <div className="hero-content flex-col lg:flex-row-reverse">
         <div className="text-center lg:text-left">
+            {/*  lottie animatim add */}
         <Player
   autoplay
   loop
@@ -134,7 +135,10 @@ const Signup = () => {
                 </label>
               </div>
               <div className="form-control mt-6">
-                <button className="btn btn-primary">Register</button>
+              <button className="group relative h-12 w-48 overflow-hidden rounded-lg bg-white text-lg shadow">
+    <div className="absolute inset-0 w-3 bg-amber-400 transition-all duration-[250ms] ease-out group-hover:w-full"></div>
+    <span className="relative text-black group-hover:text-white">Register</span>
+  </button>
               </div>
             </form>
             {/* ------------------------- */}
