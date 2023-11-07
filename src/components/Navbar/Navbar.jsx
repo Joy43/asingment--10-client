@@ -39,16 +39,16 @@ const themeIconSize = "30px";
     </li>
      
      <li>
-         <Link to="/contat">Contact</Link>
+         <Link to="/gallery">Gallery</Link>
      </li>
      
      <li>
          <Link to="/login">Login</Link>
      </li>
      <li>
-         <Link to="/rooms">Books Now</Link>
+         <Link to="/rooms">Rooms</Link>
      </li>
-     {/* GOOGLE */}
+     {/*---------- GOOGLE --------------*/}
     </>
     
  )
@@ -91,7 +91,7 @@ const themeIconSize = "30px";
       </div>
       <div className="navbar-end">
        
-   {/* dark theme */}
+   {/* --------dark theme ------------*/}
 <div className="tex-2xl mr-8">
 
 
@@ -99,7 +99,7 @@ const themeIconSize = "30px";
 {isDarkMode ? <MdDarkMode size={themeIconSize} /> : <BsSunFill size={themeIconSize} />}
         </button>
         </div>
-        {/* google */}
+        {/* ---------google --------------*/}
 <div>
 <div>
  

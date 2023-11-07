@@ -4,7 +4,7 @@ import { motion} from "framer-motion";
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 const Servicescard = ({Services}) => {
-    const {_id,Name,DesCription,Price,imghotel,Description,Availability,offers,roomsize}=Services;
+    const {_id,Name,Price,imghotel,Description,Availability,offers,roomsize}=Services;
     // --------aos--------
     useEffect(() => {
         AOS.init({ duration: 1000 }); // You can adjust the duration as needed
@@ -35,13 +35,18 @@ const Servicescard = ({Services}) => {
             </figure>
             <div className="card-body">
                 <h2 className="card-title">{Name}</h2>
-                <p className="text-xl text-orange-500">Price: ${Price}</p>
+                <p>{Description}</p>
+                <p className="text-xl"><span className='bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3'>Price</span>: ${Price}</p>
+                <p ><span className='bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3'>Offer</span>:{offers}</p>
                 <div className="card-actions">
                 <Link to="/rooms">
-                   <button className="group relative h-12 w-48 overflow-hidden rounded-lg bg-white text-lg shadow">
+                  {/* button */}
+          <div className='justify-center text-center items-center'>
+          <button className="group relative h-12 w-48 overflow-hidden rounded-lg bg-white text-lg shadow">
     <div className="absolute inset-0 w-3 bg-blue-400 transition-all duration-[250ms] ease-out group-hover:w-full"></div>
-    <span className="relative text-black group-hover:text-white">Book Now</span>
+    <span className="relative text-black group-hover:text-white">Rooms</span>
   </button>
+          </div>
                    </Link>
                     </div>
             </div>

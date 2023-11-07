@@ -6,6 +6,7 @@ import { Player, Controls } from '@lottiefiles/react-lottie-player';
 import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Authentication/Authprovider";
+import { Helmet } from 'react-helmet';
 const Signup = () => {
 
     const {createUser}=useContext(AuthContext);
@@ -65,6 +66,12 @@ const Signup = () => {
           });
       };
     return (
+     <div>
+
+<Helmet>
+      <title>Signup</title>
+      <meta name='Home' content='This is home page' />
+      </Helmet>
         <div className="hero min-h-screen bg-base-200">
       <div className="hero-content flex-col lg:flex-row-reverse">
         <div className="text-center lg:text-left">
@@ -159,6 +166,7 @@ const Signup = () => {
         </div>
       </div>
     </div>
+     </div>
     );
 };
 

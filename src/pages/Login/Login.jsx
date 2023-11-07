@@ -6,6 +6,7 @@ import video from '../../assets/video/login.mp4'
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import  { useEffect, useRef, useState } from 'react';
 import useAuthentication from '../../Hooks/useAuthentication';
+import { Helmet } from 'react-helmet';
 
 const signIn = () => {
    const {signIn}=useAuthentication()
@@ -62,6 +63,11 @@ const signIn = () => {
       });
     }
     return (
+     <div>
+       <Helmet>
+      <title>Login</title>
+      <meta name='Home' content='This is home page' />
+      </Helmet>
         <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="text-center lg:text-left">
@@ -143,6 +149,7 @@ const signIn = () => {
           </div>
         </div>
       </div>
+     </div>
     );
 };
 
