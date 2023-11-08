@@ -53,7 +53,7 @@ Swal.fire('Order comfirm!')
     
     return (
         <div>
-             <div className="card-body bg-base-200">
+             <div className="card-body mt-4 bg-base-200">
      
     {/*------------- card------------- */}
    

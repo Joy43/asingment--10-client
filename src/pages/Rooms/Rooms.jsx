@@ -1,7 +1,7 @@
 
 import { Helmet } from "react-helmet";
 import Videobg from "../Video backgroun/Videobg";
-import RoomserviceCard from "./RoomService/RoomserviceCard";
+
 import Roomservice from "./RoomService/Roomservice";
 
 
@@ -15,7 +15,7 @@ const Rooms = () => {
             <div className="mt-5 mb-6">
                <Videobg></Videobg> 
             </div>
-            <div>
+            <div className="mt-4">
              <Roomservice></Roomservice>
             </div>
             

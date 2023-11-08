@@ -11,6 +11,8 @@ import PrivateRouter from "./PrivateRouter";
 import Gallery from "../components/Gallery/Gallery";
 import CheakOutbook from "../pages/Rooms/Cheakbook/CheakOutbook";
 import Booking from "../pages/Rooms/Booking/Booking";
+// import UpdateBook from "../pages/Rooms/Updatebook/UpdateBook";
+
 
 const router = createBrowserRouter([
     {
@@ -52,7 +54,13 @@ element:<Login></Login>
         {
           path:'bookings',
           element:<PrivateRouter><Booking></Booking></PrivateRouter>,
-        }
+        },
+        // {
+        //   path:"updatebook/:id",
+        //   element:<UpdateBook></UpdateBook>,
+        //   loader:({params})=>fetch(`http://localhost:5000/bookings/${params.id}`),
+        //   },
+        
      ]
     }
   ]);

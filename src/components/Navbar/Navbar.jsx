@@ -37,10 +37,9 @@ const themeIconSize = "30px";
     <li>
      <Link to='/'> Home</Link>
     </li>
-     
-     <li>
-         <Link to="/gallery">Gallery</Link>
-     </li>
+    <li>
+         <Link to="/error">About us</Link>
+     </li>  
      
      <li>
          <Link to="/login">Login</Link>
@@ -48,13 +47,26 @@ const themeIconSize = "30px";
      <li>
          <Link to="/rooms">Rooms</Link>
      </li>
+     <li>
+            <Link to="/bookings">My Bookings</Link>
+          </li>
      {/*---------- GOOGLE --------------*/}
+     {/* {user?.email ? (
+        <>
+         
+       
+        </>
+      ) : (
+        <li>
+          <Link to="/login">Login</Link>
+        </li>
+      )} */}
     </>
     
  )
     return (
       <div className="mt-3">
-          <div className="navbar bg-base-300">
+          <div className="navbar bg-base-200">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -75,7 +87,7 @@ const themeIconSize = "30px";
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 text-xs shadow bg-base-100 rounded-box w-52"
           >
             {naviteams}
           </ul>
