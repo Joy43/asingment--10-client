@@ -11,7 +11,8 @@ import PrivateRouter from "./PrivateRouter";
 import Gallery from "../components/Gallery/Gallery";
 import CheakOutbook from "../pages/Rooms/Cheakbook/CheakOutbook";
 import Booking from "../pages/Rooms/Booking/Booking";
-// import UpdateBook from "../pages/Rooms/Updatebook/UpdateBook";
+import UpdateBook from "../pages/Rooms/Updatebook/UpdateBook";
+
 
 
 const router = createBrowserRouter([
@@ -49,17 +50,17 @@ element:<Login></Login>
         {
           path:'book/:id',
           element:<PrivateRouter><CheakOutbook></CheakOutbook></PrivateRouter>,
-          loader:({params})=>fetch(`http://localhost:5000/services/${params.id}`)
+          loader:({params})=>fetch(`https://server-hotelmanagement.vercel.app/services/${params.id}`)
         },
         {
           path:'bookings',
           element:<PrivateRouter><Booking></Booking></PrivateRouter>,
         },
-        // {
-        //   path:"updatebook/:id",
-        //   element:<UpdateBook></UpdateBook>,
-        //   loader:({params})=>fetch(`http://localhost:5000/bookings/${params.id}`),
-        //   },
+        {
+          path:"updatebook/:id",
+          element:<UpdateBook></UpdateBook>,
+          loader:({params})=>fetch(`https://server-hotelmanagement.vercel.app/services/${params.id}`),
+          },
         
      ]
     }

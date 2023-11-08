@@ -4,8 +4,6 @@ import Gallerycard from './GalleryCard/Gallerycard';
 
 const Gallery = () => {
     const photoGallery = useServices();
-console.log(photoGallery);
- 
 
 
     return (

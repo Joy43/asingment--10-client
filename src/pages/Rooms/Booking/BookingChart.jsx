@@ -18,6 +18,9 @@ const BookingChart = ({booking,handleDelete}) => {
                             <p className="text-base font-medium  ">
                             {email}
                             </p>
+                            <p className="text-base font-medium  ">
+                            {Name}
+                            </p>
                             <p className="mt-2 text-sm  white"> {date}
                            </p>
                             <p className="mt-2 text-sm  white"> {roomsize}

@@ -10,18 +10,31 @@ const Booking = () => {
     const{user}=useAuthentication();
     const axiosSecure=useAxiosSequre()
     const [bookings, setBookings] = useState([]);
-    // data load axios
+    // ********data load axios **********
     const url = `/bookings?email=${user?.email}`;
 
     useEffect(() => {
-        axios.get(url,{withCredentials:true})
-        .then(res=>{
-          setBookings(res.data)
-        })
-        // --------------- axios use  -----------------------
-axiosSecure.get(url)
-.then(res=>setBookings(res.data))
-}, [url,axiosSecure]);
+        axios.get(url, { withCredentials: true })
+            .then(res => {
+                if (res?.data) {
+                    setBookings(res.data);
+                }
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    
+        axiosSecure.get(url)
+            .then(res => {
+                if (res?.data) {
+                    setBookings(res.data);
+                }
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    }, [url, axiosSecure]);
+    
     
 // *******************handle delete ************
 const handleDelete = (id) => {
@@ -35,7 +48,7 @@ const handleDelete = (id) => {
         confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
         if (result.isConfirmed) {
-            fetch(`http://localhost:5000/bookings/${id}`, {
+            fetch(`https://server-hotelmanagement.vercel.app/bookings/${id}`, {
                 method: 'DELETE'
             })
             .then(res => res.json())

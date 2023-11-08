@@ -7,7 +7,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import  { useEffect, useRef, useState } from 'react';
 import useAuthentication from '../../Hooks/useAuthentication';
 import { Helmet } from 'react-helmet';
-
+import axios from 'axios';
 const signIn = () => {
    const {signIn}=useAuthentication()
    const location = useLocation();
@@ -30,26 +30,26 @@ const signIn = () => {
         const form=new FormData(e.currentTarget);
         const email=form.get('email')
         const password=form.get('password')
-        console.log(email,password)
-        console.log(form.get('email'));
-        console.log(form.get('password'));
+       
+       
       
         
         signIn(email,password)
-      .then(result=>{
-        console.log(result.user)
-      
-        if (result.user.email) {
-          Swal.fire(
-            'signIn success!',
-            'Welcome to my Website',
-            'success'
-          );
-        } 
-        // ------------NAVIGATE-----------------
-        
-        navigate(location?.state?location.state:'/');
-      })
+        .then(result =>{
+          const loggedInUser =result.user;
+          console.log(loggedInUser)
+          const user ={email};
+    
+        axios.post('https://car-server-zeta.vercel.app/jwt',user,
+        {withCredentials:true})
+        .then(res=>{
+          console.log(res.data)
+          if(res.data.success){
+            navigate(location?.state?location.state:'/')
+          }
+        })
+          
+        })
       
       .catch(error => {
         
