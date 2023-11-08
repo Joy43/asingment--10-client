@@ -7,8 +7,9 @@ import Signup from "../pages/Signup/Signup";
 import Login from "../pages/Login/Login";
 import Rooms from "../pages/Rooms/Rooms";
 import PrivateRouter from "./PrivateRouter";
-import { Helmet } from "react-helmet";
+
 import Gallery from "../components/Gallery/Gallery";
+import CheakOutbook from "../pages/Rooms/Cheakbook/CheakOutbook";
 
 const router = createBrowserRouter([
     {
@@ -41,6 +42,11 @@ element:<Login></Login>
         {
           path:'gallery',
           element:<Gallery></Gallery>
+        },
+        {
+          path:'book/:id',
+          element:<PrivateRouter><CheakOutbook></CheakOutbook></PrivateRouter>,
+          loader:({params})=>fetch(`http://localhost:5000/services/${params.id}`)
         }
      ]
     }

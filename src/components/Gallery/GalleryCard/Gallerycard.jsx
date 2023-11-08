@@ -15,7 +15,7 @@ const Gallerycard = ({ Services }) => {
     };
 
     return (
-        <div className="gallery-card">
+        <div className="gallery-card rounded-lg">
             <div className="image-container re  ">
           
              <div className=''>
@@ -27,8 +27,28 @@ const Gallerycard = ({ Services }) => {
                 />
              
                
-                <div className="see-more-button text-center -mt-20 " onClick={openPopup}>
-                    <button className='btn-neutral'>see more</button>
+                <div className="see-more-button bg-slate-100 text-center -mt-20 " onClick={openPopup}>
+                <button
+        className="flex   select-none items-center gap-2 rounded-lg py-3 px-6 text-center align-middle font-sans text-xs  uppercase text-pink-500 font-bold transition-all hover:bg-pink-500 active:bg-pink-500 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        type="button"
+      >
+        Learn More
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="currentColor"
+          aria-hidden="true"
+          className="h-4 w-4"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
+          ></path>
+        </svg>
+      </button>
                 </div>
                 </div>
             </div>

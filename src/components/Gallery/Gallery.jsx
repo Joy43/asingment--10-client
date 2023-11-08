@@ -11,7 +11,7 @@ console.log(photoGallery);
     return (
         <div>
             <div>
-                <h1 className='justify-center text-center font-bold text-2xl'>Gallery</h1>
+                <h1 className='justify-center text-center font-bold gap-2 text-2xl '>Gallery</h1>
             </div>
             <div className="container mx-auto p-4 grid grid-cols-1
          sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">

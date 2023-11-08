@@ -2,6 +2,7 @@
 import { Helmet } from "react-helmet";
 import Videobg from "../Video backgroun/Videobg";
 import RoomserviceCard from "./RoomService/RoomserviceCard";
+import Roomservice from "./RoomService/Roomservice";
 
 
 const Rooms = () => {
@@ -15,7 +16,7 @@ const Rooms = () => {
                <Videobg></Videobg> 
             </div>
             <div>
-                <RoomserviceCard></RoomserviceCard>
+             <Roomservice></Roomservice>
             </div>
             
         </div>
