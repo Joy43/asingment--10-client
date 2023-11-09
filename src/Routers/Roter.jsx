@@ -51,7 +51,7 @@ element:<Login></Login>
         {
           path:'book/:id',
           element:<CheakOutbook></CheakOutbook>,
-          loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+          loader: ({ params }) => fetch(`https://server-hotelmanagement.vercel.app/services/${params.id}`)
         },
         {
           path:'bookings',
@@ -60,7 +60,7 @@ element:<Login></Login>
         {
           path:"updatebook/:id",
           element:<UpdateBook></UpdateBook>,
-          loader:({params})=>fetch(`http://localhost:5000/services/${params.id}`),
+          loader:({params})=>fetch(`https://server-hotelmanagement.vercel.app/services/${params.id}`),
           },
         
      ]

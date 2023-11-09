@@ -13,7 +13,7 @@ const Booking = () => {
     
     const [bookings, setBookings] = useState([]);
     // ********data load axios **********
-    const url = `http://localhost:5000/bookings?email=${user?.email}`;
+    const url = `https://server-hotelmanagement.vercel.app/bookings?email=${user?.email}`;
     // const url =`/bookings?email=${user?.email}`;
 
     
@@ -41,7 +41,7 @@ const handleDelete =id=> {
         confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
         if (result.isConfirmed) {
-            fetch(`http://localhost:5000/bookings/${id}`, {
+            fetch(`https://server-hotelmanagement.vercel.app/bookings/${id}`, {
                 method: 'DELETE'
             })
             .then(res => res.json())

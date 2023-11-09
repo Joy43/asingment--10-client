@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import useAuthentication from "./useAuthentication";
 
 const axiosSecure=axios.create({
-    baseURL:'http://localhost:5000/',
+    baseURL:'https://server-hotelmanagement.vercel.app/',
     withCredentials: true
 });
 
