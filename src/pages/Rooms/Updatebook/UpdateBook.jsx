@@ -19,12 +19,13 @@ const UpdateBook = () => {
         const Price=form.Price.value;
         const updatebook={Name,date,roomimg,Price,email,roomsize}
         console.log(updatebook)
-    fetch(`https://server-hotelmanagement-nknoi9ilv-ss-joys-projects.vercel.app/bookings/${_id}`, {
+    fetch(`http://localhost:5000/services/${_id}`, {
         method: 'PUT',
         headers: {
           'content-type': 'application/json', 
         },
-        body:JSON.stringify(UpdateBook),
+        body: JSON.stringify(updatebook),
+
       })
         .then((res) => res.json())
         .then((data) => {
@@ -60,7 +61,7 @@ const UpdateBook = () => {
           <label className="label">
             <span className="label-text">Booking Date</span>
           </label>
-          <input type="date"  name="date" placeholder="password" className="input input-bordered" required />
+          <input type="date"defaultValue={date}  name="date" placeholder="password" className="input input-bordered" required />
           <label className="label">
            
           </label>

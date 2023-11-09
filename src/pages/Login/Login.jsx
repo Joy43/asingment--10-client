@@ -35,33 +35,33 @@ const signIn = () => {
       
         
         signIn(email,password)
-        .then(result =>{
-          const loggedInUser =result.user;
-          console.log(loggedInUser)
-          const user ={email};
-    
-        axios.post('https://server-hotelmanagement-nknoi9ilv-ss-joys-projects.vercel.app/',user,
-        {withCredentials:true})
-        .then(res=>{
-          console.log(res.data)
-          if(res.data.success){
-            navigate(location?.state?location.state:'/')
-          }
-        })
-          
-        })
-      
-      .catch(error => {
+        .then(result=>{
+          console.log(result.user)
         
-        console.error(error);
-        Swal.fire(
-          'signIn failed',
-          'Email or password is incorrect',
-          'error'
-        );
-      
-      });
-    }
+          if (result.user.email) {
+            Swal.fire(
+              'Login success!',
+              'Welcome to my Website',
+              'success'
+            );
+          } 
+          // ------------NAVIGATE-----------------
+          
+          navigate(location?.state?location.state:'/');
+        })
+        
+        .catch(error => {
+          
+          console.error(error);
+          Swal.fire(
+            'Login failed',
+            'Email or password is incorrect',
+            'error'
+          );
+        
+        });
+        
+        }
     return (
      <div>
        <Helmet>

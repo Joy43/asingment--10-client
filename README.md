@@ -1,8 +1,11 @@
-# React + Vite
+# World Hotel management
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+welcom to my hotel management website
 
-Currently, two official plugins are available:
+I can face many problem .descripbe it:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Data fetch problem are the most huge problem facing this project
+- update data are not working .many problem face error.i can not solve this essue.sometime i can explore hardly try to best .but less sucess
+
+-deploy porblem facing
+-Data loading can indeed be tricky. 

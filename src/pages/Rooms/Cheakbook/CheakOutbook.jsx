@@ -4,6 +4,7 @@ import Swal from 'sweetalert2'
 
 const CheakOutbook = () => {
     const roomservice=useLoaderData();
+    console.log(roomservice)
     const{Name,Price,roomimg,_id,Availability,roomsize,Description}=roomservice;
     const {user}=useAuthentication()
 
@@ -31,7 +32,7 @@ const CheakOutbook = () => {
 
     // -------------data send server---------
 
-    fetch('https://server-hotelmanagement-nknoi9ilv-ss-joys-projects.vercel.app/bookings',{  
+    fetch('http://localhost:5000/bookings',{  
     method:'POST',
     headers:{
 'content-type':'application/json'
@@ -43,7 +44,11 @@ const CheakOutbook = () => {
       console.log(data)
       if(data.insertedId){
         
-Swal.fire('Order comfirm!')
+        Swal.fire(
+          'order success!',
+          'Welcome to my Website',
+          'success'
+        );
     }
     })
 

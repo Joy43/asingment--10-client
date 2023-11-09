@@ -1,35 +1,36 @@
 import useAuthentication from "../../../Hooks/useAuthentication";
 import Swal from 'sweetalert2'
-import axios from "axios";
+
 
 import {  useEffect, useState } from "react";
 
 import BookingChart from "./BookingChart";
 import { Helmet } from "react-helmet";
-import useAxiosSequre from "../../../Hooks/useAxiosSwqure";
+
 const Booking = () => {
     const{user}=useAuthentication();
-    const axiosSecure=useAxiosSequre()
+   
     
     const [bookings, setBookings] = useState([]);
     // ********data load axios **********
-    // const url = `https://server-hotelmanagement-nknoi9ilv-ss-joys-projects.vercel.app/?email=${user?.email}`;
-    const url = `/bookings?email=${user?.email}`;
-    useEffect(() => {
-        axios.get(url,{withCredentials:true})
-        .then(res=>{
-          setBookings(res.data)
-        })
-     
+    const url = `http://localhost:5000/bookings?email=${user?.email}`;
+    // const url =`/bookings?email=${user?.email}`;
+
     
     // --------------- axios use  -----------------------
-    axiosSecure.get(url)
-    .then(res=>setBookings(res.data))
-    }, [url,axiosSecure]);
+    useEffect(() => {
+        fetch(url)
+            .then(res => res.json())
+            .then(data => setBookings(data))
+
+        // axiosSecure.get(url)
+        // .then(res => setBookings(res.data))
+
+    }, [url]);
     
     
 // *******************handle delete ************
-const handleDelete = (id) => {
+const handleDelete =id=> {
     Swal.fire({
         title: 'Are you sure you want to delete?',
         text: "This action is irreversible!",
@@ -75,7 +76,7 @@ const handleDelete = (id) => {
                 <div className="!z-5 gap-3 relative flex h-full w-full flex-col rounded-[20px] bg-white bg-clip-border p-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-800 dark:text-black dark:shadow-none">
                     <div className="mb-8 w-full">
                         <h4 className="text-xl font-bold text-navy-700 dark:text-white">
-                        All Booking
+                        All Booking{bookings.length}
                         </h4>
                         <p className="mt-2 text-base text-gray-600">
                         Here you can find more details about your Booking. Keep you user

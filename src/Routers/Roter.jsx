@@ -15,6 +15,7 @@ import UpdateBook from "../pages/Rooms/Updatebook/UpdateBook";
 
 
 
+
 const router = createBrowserRouter([
     {
       path: "/",
@@ -49,8 +50,8 @@ element:<Login></Login>
         },
         {
           path:'book/:id',
-          element:<PrivateRouter><CheakOutbook></CheakOutbook></PrivateRouter>,
-          loader:({params})=>fetch(`https://server-hotelmanagement-nknoi9ilv-ss-joys-projects.vercel.app/services/${params.id}`)
+          element:<CheakOutbook></CheakOutbook>,
+          loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
         },
         {
           path:'bookings',
@@ -59,7 +60,7 @@ element:<Login></Login>
         {
           path:"updatebook/:id",
           element:<UpdateBook></UpdateBook>,
-          loader:({params})=>fetch(`https://server-hotelmanagement-nknoi9ilv-ss-joys-projects.vercel.app/bookings/${params.id}`),
+          loader:({params})=>fetch(`http://localhost:5000/services/${params.id}`),
           },
         
      ]
