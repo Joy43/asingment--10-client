@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import useAuthentication from "./useAuthentication";
 
 const axiosSecure=axios.create({
-    baseURL:'https://server-hotelmanagement.vercel.app/',
+    baseURL:'https://server-hotelmanagement-nknoi9ilv-ss-joys-projects.vercel.app/',
     withCredentials:true
 });
 
@@ -27,7 +27,7 @@ navigate('/login')
         }
     })
 
-   },[]) 
+   },[logOut, navigate]) 
 return axiosSecure;
 };
 

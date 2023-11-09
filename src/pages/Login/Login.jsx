@@ -40,7 +40,7 @@ const signIn = () => {
           console.log(loggedInUser)
           const user ={email};
     
-        axios.post('https://car-server-zeta.vercel.app/jwt',user,
+        axios.post('https://server-hotelmanagement-nknoi9ilv-ss-joys-projects.vercel.app/',user,
         {withCredentials:true})
         .then(res=>{
           console.log(res.data)

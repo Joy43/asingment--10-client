@@ -19,12 +19,12 @@ const UpdateBook = () => {
         const Price=form.Price.value;
         const updatebook={Name,date,roomimg,Price,email,roomsize}
         console.log(updatebook)
-    fetch(`https://server-hotelmanagement.vercel.app/bookings/${_id}`, {
+    fetch(`https://server-hotelmanagement-nknoi9ilv-ss-joys-projects.vercel.app/bookings/${_id}`, {
         method: 'PUT',
         headers: {
           'content-type': 'application/json', 
         },
-        body:JSON.stringify(UpdateBook ),
+        body:JSON.stringify(UpdateBook),
       })
         .then((res) => res.json())
         .then((data) => {

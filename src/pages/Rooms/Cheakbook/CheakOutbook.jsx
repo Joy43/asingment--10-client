@@ -31,7 +31,7 @@ const CheakOutbook = () => {
 
     // -------------data send server---------
 
-    fetch('https://server-hotelmanagement.vercel.app/bookings',{  
+    fetch('https://server-hotelmanagement-nknoi9ilv-ss-joys-projects.vercel.app/bookings',{  
     method:'POST',
     headers:{
 'content-type':'application/json'

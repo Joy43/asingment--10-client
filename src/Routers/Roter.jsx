@@ -41,7 +41,7 @@ element:<Login></Login>
         },
         {
           path:'rooms',
-          element:<PrivateRouter><Rooms></Rooms></PrivateRouter>
+          element:<Rooms></Rooms>
         },
         {
           path:'gallery',
@@ -50,7 +50,7 @@ element:<Login></Login>
         {
           path:'book/:id',
           element:<PrivateRouter><CheakOutbook></CheakOutbook></PrivateRouter>,
-          loader:({params})=>fetch(`https://server-hotelmanagement.vercel.app/services/${params.id}`)
+          loader:({params})=>fetch(`https://server-hotelmanagement-nknoi9ilv-ss-joys-projects.vercel.app/services/${params.id}`)
         },
         {
           path:'bookings',
@@ -59,7 +59,7 @@ element:<Login></Login>
         {
           path:"updatebook/:id",
           element:<UpdateBook></UpdateBook>,
-          loader:({params})=>fetch(`https://server-hotelmanagement.vercel.app/services/${params.id}`),
+          loader:({params})=>fetch(`https://server-hotelmanagement-nknoi9ilv-ss-joys-projects.vercel.app/bookings/${params.id}`),
           },
         
      ]

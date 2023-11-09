@@ -3,37 +3,29 @@ import Swal from 'sweetalert2'
 import axios from "axios";
 
 import {  useEffect, useState } from "react";
-import useAxiosSequre from "../../../Hooks/useAxiosSwqure";
+
 import BookingChart from "./BookingChart";
 import { Helmet } from "react-helmet";
+import useAxiosSequre from "../../../Hooks/useAxiosSwqure";
 const Booking = () => {
     const{user}=useAuthentication();
     const axiosSecure=useAxiosSequre()
+    
     const [bookings, setBookings] = useState([]);
     // ********data load axios **********
+    // const url = `https://server-hotelmanagement-nknoi9ilv-ss-joys-projects.vercel.app/?email=${user?.email}`;
     const url = `/bookings?email=${user?.email}`;
-
     useEffect(() => {
-        axios.get(url, { withCredentials: true })
-            .then(res => {
-                if (res?.data) {
-                    setBookings(res.data);
-                }
-            })
-            .catch(error => {
-                console.error(error);
-            });
+        axios.get(url,{withCredentials:true})
+        .then(res=>{
+          setBookings(res.data)
+        })
+     
     
-        axiosSecure.get(url)
-            .then(res => {
-                if (res?.data) {
-                    setBookings(res.data);
-                }
-            })
-            .catch(error => {
-                console.error(error);
-            });
-    }, [url, axiosSecure]);
+    // --------------- axios use  -----------------------
+    axiosSecure.get(url)
+    .then(res=>setBookings(res.data))
+    }, [url,axiosSecure]);
     
     
 // *******************handle delete ************
@@ -48,7 +40,7 @@ const handleDelete = (id) => {
         confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
         if (result.isConfirmed) {
-            fetch(`https://server-hotelmanagement.vercel.app/bookings/${id}`, {
+            fetch(`http://localhost:5000/bookings/${id}`, {
                 method: 'DELETE'
             })
             .then(res => res.json())

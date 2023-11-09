@@ -1,25 +1,10 @@
 import { Link } from "react-router-dom";
 
-import Swal from 'sweetalert2';
+// import Swal from 'sweetalert2';
 
 const RoomserviceCard = ({roomservice}) => {
   const {_id,roomimg,Name,Price,imghotel,Description,Availability,offers,roomsize} = roomservice;
-  const handleBookNow = () => {
-    // Show a sweet alert when the "Book Now" button is clicked
-    Swal.fire({
-      title: 'Room Booking',
-      text: 'The room will be unavailable when someone books it.',
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonText: 'Book Now',
-      cancelButtonText: 'Cancel',
-    }).then((result) => {
-      if (result.isConfirmed) {
-       
-        history.push(`/book/${_id}`);
-      }
-    });
-  };
+ 
   
   return (
         
@@ -48,7 +33,7 @@ const RoomserviceCard = ({roomservice}) => {
         </span>
         <div className="h-28">
           <span className="line-clamp-4 py-2 text-base font-light leading-relaxed">
-{Description} Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi aperiam deserunt blanditiis eligendi corrupti amet.
+{Description}  amet consectetur adipisicing elit. Modi aperiam deserunt blanditiis eligendi corrupti amet.
           </span>
         </div>
         <div className=" grid-cols-2 flex group justify-between">
@@ -63,7 +48,7 @@ const RoomserviceCard = ({roomservice}) => {
              <Link to={`/book/${_id}`}>
           <button
             className="group relative h-12 w-48 overflow-hidden rounded-lg bg-white text-lg shadow"
-            onClick={handleBookNow}
+            // onClick={handleBookNow}
           >
             <div className="absolute inset-0 w-3 bg-blue-400 transition-all duration-[250ms] ease-out group-hover:w-full"></div>
             <span className="relative text-black group-hover:text-white">Book Now</span>
